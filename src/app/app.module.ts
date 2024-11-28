@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersModule } from "./characters/characters.module";
+import { PlanetsModule } from "./planets/planets.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CharactersModule } from "./characters/characters.module";
     BrowserModule,
     AppRoutingModule,
     CharactersModule,
-    HttpClientModule
+    HttpClientModule,
+    PlanetsModule
 ],
   providers: [],
   bootstrap: [AppComponent]
