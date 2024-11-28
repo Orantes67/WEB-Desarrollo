@@ -4,17 +4,18 @@ import { Observable } from 'rxjs';
 import { environment } from '../../enviroments/enviroment'; 
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class CharactersService {
-  private apiUrl = `${environment.apiUrl}/api/characters`;
+export class PlanetsService {
+  private apiUrl = `${environment.apiUrl}/api/planets`;
 
   constructor(private http: HttpClient) {}
 
-  getCharacters(): Observable<any> {
+  getPlanets(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
-  getCharacterById(id: number): Observable<any> {
+
+  getPlanetById(id: number): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }
