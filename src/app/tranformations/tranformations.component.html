@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Transformaciones de Dragon Ball</h1>
+  
+    <!-- Muestra un mensaje de "Cargando..." mientras los datos se están obteniendo -->
+    <div *ngIf="loading" class="loading-message">Cargando...</div>
+  
+    <!-- Muestra las transformaciones cuando los datos están disponibles -->
+    <ul *ngIf="!loading && transformations.length > 0" class="transformations-list">
+      <li *ngFor="let transformation of transformations" class="transformation-item">
+        <h2 class="character-name">{{ transformation.character }}</h2>
+        <p><strong>Transformación:</strong> {{ transformation.transformation }}</p>
+        <img [src]="transformation.image" [alt]="transformation.character" class="character-image" />
+      </li>
+    </ul>
+  
+    <!-- Muestra un mensaje si no hay transformaciones -->
+    <div *ngIf="!loading && transformations.length === 0" class="no-data-message">
+      No se encontraron datos.
+    </div>
+  </div>
+  
