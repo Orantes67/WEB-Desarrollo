@@ -1,0 +1,15 @@
+
+
+<div class="card-container">
+  <div *ngFor="let character of filteredCharacters" class="card">
+    <h2 class="card-title">{{ character.name }}</h2>
+    <img 
+      [src]="character.image" 
+      [alt]="character.name" 
+      class="card-image" 
+    />
+    <p class="card-description">{{ character.description || 'Descripción no disponible.' }}</p>
+    <button class="card-button">Origen: {{ character.origin || 'Desconocido' }}</button>
+    <button class="card-button">+</button>
+  </div>
+</div>
