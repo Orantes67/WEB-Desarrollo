@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersModule } from "./characters/characters.module";
 import { PlanetsModule } from "./planets/planets.module";
+import { TransformacionesComponent } from './transformacion/transformaciones/transformaciones.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TransformacionesComponent
   ],
   imports: [
     BrowserModule,
