@@ -7,11 +7,6 @@
       class="card-image" 
     />
     <p class="card-description">{{ character.description || 'Descripción no disponible.' }}</p>
-<button
-  class="card-button"
-  [routerLink]="['/planets', character.originPlanet || 'desconocido']">
-  Origen: {{ character.originPlanet || 'Desconocido' }}
-</button>
-    <button class="card-button">+</button>
+    <button class="card-button" (click)="goToPlanets()">Info</button>
   </div>
 </div>

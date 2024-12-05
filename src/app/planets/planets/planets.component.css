@@ -1,44 +1,69 @@
-
+/* Estilo general para la tarjeta de planeta */
 .planet-card {
-  background: linear-gradient(135deg, #ff6600, #ff9900); 
-  border-radius: 10px;
+  background: linear-gradient(145deg, #6e7dff, #5061d1); /* Fondo con gradiente suave */
+  color: white;
+  border-radius: 15px;
   padding: 20px;
-  margin: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  margin: 20px auto;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  overflow: hidden; /* Asegura que el contenido no sobresalga de la tarjeta */
+  transform: scale(1);
 }
 
 .planet-card:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05); /* Efecto de expansión al pasar el mouse */
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3); /* Sombra más intensa al hacer hover */
 }
 
-
-.planet-card h3 {
-  font-family: 'Impact', sans-serif; 
-  font-size: 2rem;
-  color: #fff; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-  padding-bottom: 10px;
+/* Estilo para el encabezado de la tarjeta (nombre e imagen) */
+.planet-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-.planet-card p {
-  font-family: 'Arial', sans-serif;
-  color: #fff;
-  font-size: 1rem;
+.planet-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin: 0;
-  padding-bottom: 10px;
-  opacity: 0.85;
 }
 
-.planet-card img {
-    width: 100%;              
-    height: 100%;              
-    object-fit: cover;         
-    max-height: 200px;          
-    border-radius: 8px;
-    border: 4px solid #fff;    
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+.planet-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para la descripción */
+.planet-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 15px;
+  text-align: center;
+  line-height: 1.4;
+  padding: 10px;
+  font-style: italic;
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+  .planet-card {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .planet-name {
+    font-size: 1.4rem;
+  }
+
+  .planet-description {
+    font-size: 0.9rem;
+  }
 }

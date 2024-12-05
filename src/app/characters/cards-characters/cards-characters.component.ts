@@ -3,6 +3,7 @@ import { forkJoin } from 'rxjs';
 import { Character, CharacterResponse } from '../interfaces/characters';
 import { CharactersService } from '../service/charcaters.service';
 import { SharedService } from '../../service/shared-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'characters',
@@ -15,11 +16,16 @@ export class CardsCharactersComponent implements OnInit {
 
   constructor(
     private charactersService: CharactersService,
-    public sharedService: SharedService
+    public sharedService: SharedService,
+    private routing: Router
   ) {}
 
   ngOnInit(): void {
     this.getCharacters();
+  }
+
+  goToPlanets(): void {
+    this.routing.navigate(['/planets']);
   }
 
   getCharacters(): void {
@@ -40,7 +46,7 @@ export class CardsCharactersComponent implements OnInit {
 
         console.log('Personajes filtrados (básicos):', filteredCharacters);
 
-           this.getCharacterDetails(filteredCharacters);
+        this.getCharacterDetails(filteredCharacters);
       },
       error: (err) => {
         console.error('Error al obtener personajes:', err);
@@ -71,5 +77,4 @@ export class CardsCharactersComponent implements OnInit {
       },
     });
   }
-  
 }
